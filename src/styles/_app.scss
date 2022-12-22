@@ -1,0 +1,145 @@
+@import "./colors";
+@import "./sizes";
+
+html,
+body {
+  font-family: "Verdana",
+    sans-serif;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: 0.25rem;
+  color: $color-black;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: $color-accent;
+}
+
+.centered {
+  display: flex;
+  place-content: center;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cover>* {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  overflow-x: hidden;
+}
+
+.cover> :first-child {
+  margin-top: 0;
+  padding-bottom: 1rem;
+}
+
+.cover> :last-child {
+  margin-bottom: 0;
+  padding-top: 1rem;
+}
+
+.cover>.center {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 80vh;
+}
+
+.column {
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 50%;
+  align-content: center;
+}
+
+.padded {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  letter-spacing: 0.1rem;
+  margin-top: -0.4rem;
+  word-break: break-word;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.accent {
+  color: $color-accent;
+}
+
+.accent::selection {
+  background-color: $color-black;
+}
+
+h1 {
+  min-width: 60%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-weight: 800;
+}
+
+h1::before {
+  content: "";
+  width: 15vw;
+  min-width: 10rem;
+  max-width: 218px;
+  background: $color-accent;
+  height: 0.4rem;
+  position: absolute;
+}
+
+h2 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-weight: 800;
+}
+
+h2::before {
+  content: "";
+  width: 8vw;
+  max-width: 218px;
+  background: $color-accent;
+  height: 0.4rem;
+  transform: translate(-110%, 1.5rem);
+  position: absolute;
+}
+
+/* Mobile and tablet view */
+@media screen and (max-width: $size-tablet) {
+  p {
+    margin-top: 1rem;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .column {
+    min-width: 51%;
+  }
+}
