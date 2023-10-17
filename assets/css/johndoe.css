@@ -71,6 +71,7 @@ section {
   display: block;
 }
 
+
 body {
   margin: 0;
   font-family: "Source Sans Pro", sans-serif;
@@ -12618,11 +12619,12 @@ pre .code {
 
 .header {
   position: relative;
-  height: 80vh;
+  height: 100vh;
   min-height: 600px;
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header.jpg);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header.jpg);
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(../imgs/header.jpg);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(../imgs/header.jpg);
   background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -12635,10 +12637,10 @@ pre .code {
 }
 
 .header .header-content {
-  width: 100%;
+  width: 50%;
   position: absolute;
-  left: 0;
-  top: 55%;
+  left: -50%;
+  top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -12646,7 +12648,7 @@ pre .code {
 }
 
 .header .header-content .header-subtitle {
-  font-weight: 200;
+  font-weight: 100;
   font-size: calc(20px + (45 - 20) * ((100vw - 300px) / (1600 - 300)));
 }
 
