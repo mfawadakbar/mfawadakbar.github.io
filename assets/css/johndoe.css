@@ -11911,12 +11911,19 @@ a.text-danger:focus {
 }
 
 .text-light {
-  color: #f8f9fa !important;
+  color: #040505 !important;
+  font-weight: bold;
+}
+
+.text-light2 {
+  color: #fff !important;
+  font-weight: bold;
 }
 
 a.text-light:hover,
 a.text-light:focus {
-  color: #cbd3da !important;
+  font-size: 100px;
+  color: #ff4b42 !important;
 }
 
 .text-dark {
@@ -12489,15 +12496,18 @@ pre .code {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  max-width: 180px;
+  max-width: 580px;
+  margin: 0 auto;
+  color: #ff4b42;
+
 }
 
 .social-icons .social-link {
-  font-size: 18px;
+  font-size: 30px;
 }
 
 .social-icons .social-link:hover {
-  color: #F85C70;
+  color: black;
 }
 
 .navbar {
