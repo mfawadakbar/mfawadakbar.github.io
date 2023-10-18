@@ -12637,7 +12637,7 @@ pre .code {
 }
 
 .header .header-content {
-  width: 50%;
+  width: 60%;
   position: absolute;
   left: -50%;
   top: 50%;
@@ -12648,16 +12648,16 @@ pre .code {
 }
 
 .header .header-content .header-subtitle {
-  font-weight: 100;
+  font-weight: 30;
   font-size: calc(20px + (45 - 20) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .header .header-content .header-title {
-  font-size: calc(40px + (120 - 40) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(10px + (120 - 40) * ((100vw - 300px) / (2600 - 300)));
   font-weight: bold;
   line-height: .7;
   margin-bottom: 25px;
-  color: inherit;
+  color: black;
 }
 
 .header .header-content .header-mono {
