@@ -12647,9 +12647,8 @@ pre .code {
 }
 
 .header .header-content {
-  width: 60%;
+  width: 80%;
   position: absolute;
-  left: -50%;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -12667,7 +12666,7 @@ pre .code {
   font-weight: bold;
   line-height: .7;
   margin-bottom: 25px;
-  color: black;
+  color: #ff4b42;
 }
 
 .header .header-content .header-mono {
