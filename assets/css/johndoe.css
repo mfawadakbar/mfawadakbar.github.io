@@ -13,6 +13,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
 
 :root {
   --blue: #79A9F5;
@@ -12631,10 +12632,9 @@ pre .code {
   position: relative;
   height: 100vh;
   min-height: 600px;
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(../imgs/header.jpg);
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(../imgs/header.jpg);
   background-size: cover;
-  background-size: 100% 100%;
+  /* Adjusted this line */
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -12648,12 +12648,43 @@ pre .code {
 
 .header .header-content {
   width: 80%;
+  max-width: 960px;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
+  text-align: center;
+  padding: 2rem;
+  /* Adjust padding to give some space inside the box */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Semi-transparent white background */
+  backdrop-filter: blur(10px);
+  /* Frosted glass effect */
+  border-radius: 15px;
+  /* Optional: rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Optional: adding a subtle shadow can also enhance the 'lifted' effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Optional: subtle border can sometimes enhance the glass effect */
+}
+
+.header h4,
+.header h2,
+.header h6 {
+  margin: 0.5rem 0;
+  /* Adds vertical spacing */
+}
+
+.header h2 {
+  font-size: 2rem;
+  /* Responsive font size */
+}
+
+.header h4,
+.header h6 {
+  font-size: 1rem;
+  /* Responsive font size */
 }
 
 .header .header-content .header-subtitle {
@@ -12688,10 +12719,37 @@ pre .code {
 
   .header .header-content {
     padding: 20px;
+    width: 90%;
+    /* Takes up more space for smaller screens */
   }
 
   .header .header-content .header-mono {
     letter-spacing: 2px;
+  }
+
+  .header h2 {
+    font-size: 1.75rem;
+    /* Slightly smaller font size for h2 */
+  }
+
+  .header h4,
+  .header h6 {
+    font-size: 0.9rem;
+    /* Slightly smaller font sizes for h4 and h6 */
+  }
+}
+
+/* Additional media query for very small screens, like mobile phones */
+@media (max-width: 480px) {
+  .header h2 {
+    font-size: 1.5rem;
+    /* Even smaller font size for very small screens */
+  }
+
+  .header h4,
+  .header h6 {
+    font-size: 0.8rem;
+    /* Adjust font size for readability on small devices */
   }
 }
 
