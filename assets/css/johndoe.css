@@ -12667,7 +12667,61 @@ pre .code {
   /* Optional: adding a subtle shadow can also enhance the 'lifted' effect */
   border: 1px solid rgba(255, 255, 255, 0.2);
   /* Optional: subtle border can sometimes enhance the glass effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+.header-content:hover {
+  box-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 15px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.9),
+    /* Neon glow effect */
+    0 0 0 8px rgba(255, 255, 255, 0.2);
+  /* Outer glow spread */
+}
+
+@keyframes shimmer {
+
+  0%,
+  100% {
+    opacity: 0;
+    background-position: -50%;
+  }
+
+  50% {
+    opacity: 0.5;
+    background-position: 150%;
+  }
+}
+
+.header-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(112deg, transparent 30%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.2) 60%, transparent 70%);
+  background-size: 200% auto;
+  animation: shimmer 8s linear infinite;
+  border-radius: inherit;
+  /* Match the border-radius of the parent */
+  z-index: -1;
+}
+
+/* Adjusted pseudo-element for the shimmer effect without other styles */
+.header-content::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(circle at center, rgba(25s5, 255, 255, 0.8) 0%, transparent 50%);
+  border-radius: inherit;
+  /* Match the border-radius of the parent */
+  opacity: 0.5;
+  z-index: -2;
+}
+
+
+
 
 .header h4,
 .header h2,
@@ -12728,13 +12782,13 @@ pre .code {
   }
 
   .header h2 {
-    font-size: 1.75rem;
+    font-size: 3.75rem;
     /* Slightly smaller font size for h2 */
   }
 
   .header h4,
   .header h6 {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
     /* Slightly smaller font sizes for h4 and h6 */
   }
 }
@@ -12742,7 +12796,7 @@ pre .code {
 /* Additional media query for very small screens, like mobile phones */
 @media (max-width: 480px) {
   .header h2 {
-    font-size: 1.5rem;
+    font-size: 4.5rem;
     /* Even smaller font size for very small screens */
   }
 
