@@ -1,1097 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<script>
-    function sendEmail() {
-        window.location = "mailto:khan@usu.edu";
-    }
-
-    let map;
-
-    function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
-            center: { lat: 41.73549, lng: -111.83439 },
-            zoom: 8,
-        });
-    }
-
-
-</script>
-
-
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Fawad Khan's portfolio website showcasing CV and Projects.">
-    <meta name="author" content="Devcrud">
-    <title>Fawad Khan | Portfolio</title>
-    <!-- font icons -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Portfolio of Fawad Khan, Ph.D. candidate in Computer Science at Utah State University focused on human-centered AI, learning analytics, and responsible machine learning.">
+    <meta name="author" content="Fawad Khan">
+    <title>Fawad Khan | Ph.D. Candidate, Computer Science</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + JohnDoe main styles -->
-    <link rel="stylesheet" href="assets/css/johndoe.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
 </head>
 
-
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600"><i
-            class="ti-shift-left-alt"></i> Components</a>
-
-    <header class="header">
-        <div class="container">
-            <ul class="social-icons pt-3">
-                <li class="social-item"><a class="social-link text-light"
-                        href="https://www.facebook.com/profile.php?id=100009336210890"><i class="ti-facebook"
-                            aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="https://twitter.com/deadmanalive97"><i
-                            class="ti-twitter" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light"
-                        href="https://www.linkedin.com/in/mfawadakbar/"><i class="ti-linkedin"
-                            aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light"
-                        href="https://www.instagram.com/khaneagle97/"><i class="ti-instagram"
-                            aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="https://github.com/mfawadakbar"><i
-                            class="ti-github" aria-hidden="true"></i></a></li>
-            </ul>
-            <div class="header-content">
-                <h4 class="header-subtitle">Hello, I am</h4>
-                <h2 class="header-title">Fawad Khan</h2>
-                <h6 class="header-mono">| Ph.D. Candidate Computer Science |<br>| Utah State University | <br>| AI/ML in
-                    Education Research |</h6>
-                <button class="btn btn-primary btn-rounded" onClick="sendEmail();"><i class="ti-email pr-2"></i>Email
-                    Me</button>
-            </div>
-        </div>
-    </header>
-
-
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
-        <div class="container">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<body>
+    <div class="page">
+        <aside class="sidebar" aria-label="Primary navigation">
+            <button class="sidebar__toggle" type="button" aria-label="Toggle navigation" aria-controls="primary-nav"
+                aria-expanded="false" data-toggle="nav">
+                <i class="ti-menu"></i>
+                <span>Menu</span>
             </button>
-            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#resume" class="nav-link">Resume</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav brand">
-                    <img src="assets/imgs/avatar.jpg" alt="" class="brand-img">
-                    <li class="brand-txt">
-                        <h5 class="brand-title">Fawad Khan</h5>
-                        <div class="brand-subtitle">Machine Learning | Data Science</div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="#portfolio" class="nav-link">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#blog" class="nav-link">Latest Publications</a>
-                    </li>
-                    <li class="nav-item last-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
+            <div class="sidebar__profile">
+                <img src="assets/imgs/avatar.jpg" alt="Portrait of Fawad Khan">
+                <h1>Fawad Khan</h1>
+                <p>Ph.D. Candidate · Computer Science<br>Utah State University</p>
             </div>
-        </div>
-    </nav>
-    <div class="container-fluid">
-        <div id="about" class="row about-section">
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">Who am I ?</h3>
-                <span class="line mb-5"></span>
-                <h5 class="mb-3">Machine Learning Specialist / Data Science Researcher</h5>
-                <p class="mt-20">As a data science researcher with a passion for artificial intelligence, I am
-                    enthusiastic about the potential of self-learning machines to shape the future. I believe that AI
-                    has the power to accelerate progress in a variety of fields, and I am committed to exploring and
-                    advancing its capabilities through my research.</p>
-                <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i><a
-                        href="https://github.com/mfawadakbar/mfawadakbar.github.io/raw/main/Resume%20Fawad%202p%20(Updated).pdf">Download
-                        My CV</a></button>
+            <nav class="sidebar__nav" id="primary-nav">
+                <a class="nav-link active" href="#about">About</a>
+                <a class="nav-link" href="#research">Research</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#publications">Publications</a>
+                <a class="nav-link" href="#teaching">Teaching</a>
+                <a class="nav-link" href="#life">My Life</a>
+                <a class="nav-link" href="#contact">Contact</a>
+            </nav>
+            <div class="sidebar__note">
+                <i class="ti-location-pin"></i>Logan, Utah · GMT-6
             </div>
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">Personal Info</h3>
-                <span class="line mb-5"></span>
-                <ul class="mt40 info list-unstyled">
-                    <li><span>Age</span> : 25</li>
-                    <li><span>Email</span> : khan@usu.edu</li>
-                    <li><span>Phone</span> : +1 (435) 554-9385</li>
-                    <li><span>Skype</span> : fawadeagle </li>
-                    <li><span>Address</span> : 431 Old Main, Utah State University, Logan, Utah</li>
-                </ul>
-                <ul class="social-icons pt-3">
-                    <li class="social-item"><a class="social-link"
-                            href="https://www.facebook.com/profile.php?id=100009336210890"><i class="ti-facebook"
-                                aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link" href="https://twitter.com/deadmanalive97"><i
-                                class="ti-twitter" aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link" href="https://www.linkedin.com/in/mfawadakbar/"><i
-                                class="ti-linkedin" aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link" href="https://www.instagram.com/khaneagle97/"><i
-                                class="ti-instagram" aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link" href="https://github.com/mfawadakbar"><i
-                                class="ti-github" aria-hidden="true"></i></a></li>
-                </ul>
+            <div class="sidebar__actions">
+                <a class="sidebar__cta" href="mailto:khan@usu.edu"><i class="ti-email"></i>khan@usu.edu</a>
+                <a class="sidebar__cta"
+                    href="https://github.com/mfawadakbar/mfawadakbar.github.io/raw/main/Resume%20Fawad%202p%20(Updated).pdf"
+                    target="_blank" rel="noopener">Download CV</a>
             </div>
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">My Expertise</h3>
-                <span class="line mb-5"></span>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-widget icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Artificial Intelligence Data Analysis and Processing</h6>
-                        <p class="subtitle"> Over 5 years of experience in applying artificial intelligence techniques
-                            to image, text, speech, and video data.</p>
-                        <hr>
+            <ul class="sidebar__social">
+                <li><a href="https://www.linkedin.com/in/mfawadakbar/" aria-label="LinkedIn"><i
+                            class="ti-linkedin"></i></a></li>
+                <li><a href="https://github.com/mfawadakbar" aria-label="GitHub"><i class="ti-github"></i></a></li>
+                <li><a href="https://twitter.com/deadmanalive97" aria-label="Twitter"><i class="ti-twitter"></i></a>
+                </li>
+                <li><a href="https://www.instagram.com/khaneagle97/" aria-label="Instagram"><i
+                            class="ti-instagram"></i></a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <section id="about" class="panel">
+                <span class="badge">About</span>
+                <h2>Advancing equitable AI for learning communities</h2>
+                <p>I am a Ph.D. candidate in Computer Science at Utah State University where I explore how human-centered
+                    AI can support equitable learning pathways. My research blends machine learning, learning sciences,
+                    and interaction design to interpret the telemetry students generate as they program and to surface
+                    insights that instructors can act on.</p>
+                <p>At the Data Science and Applications Lab, I collaborate with faculty, practitioners, and community
+                    partners to translate models into trustworthy tools—from predictive feedback for computer science
+                    courses to analytics that inform energy and environmental decision-making.</p>
+                <div class="about-grid">
+                    <div>
+                        <h3>Current Appointment</h3>
+                        <p>Graduate Research &amp; Teaching Assistant, Data Science and Applications Lab, Utah State
+                            University (Advisor: Prof. Hamid Karimi).</p>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Scientific Research &amp; Laboratory Experience</h6>
-                        <p class="subtitle">Over 4 years of experience in conducting research in scientific
-                            laboratories.</p>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-stats-up icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Teamwork &amp; Leadership</h6>
-                        <p class="subtitle">Over 5 years of experience in teamwork and leadership roles.</p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Resume Section-->
-    <section class="section" id="resume">
-        <div class="container">
-            <h2 class="mb-5"><span class="text-danger">My</span> Resume</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-auto">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="mt-2">
-                                <h4>Experience</h4>
-                                <span class="line"></span>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="title text-danger">2021 - Present</h6>
-                            <P>Graduate Research &amp; Teaching Assistant <br><b>Utah State University, Logan, Utah,
-                                    U.S</b></P>
-                            <P class="subtitle">• As a <i>Graduate Teaching Assistant</i>, I have assisted professors in
-                                conducting lectures, graded
-                                course materials, provided assistance to students, and managed coursework on Canvas.
-                                <br>
-                                • As a <i>Graduate Research Assistant</i>, I have conducted research in the areas of
-                                Fairness
-                                in
-                                AI, AI in Education, and Social Media Mining under the supervision of Professor Hamid
-                                Karimi. <br> I am working at the <a
-                                    href="https://www.usu.edu/cs/people/HamidKarimi/people.html">Data Science and
-                                    Applications Lab</a> under the supervision of Prof. Hamid Karimi.
-                                <br><br> <b>Skills:</b> Statistical Modeling · Scientific Research
-                                · Pattern Recognition · Data Science · Artificial Intelligence (AI) · Data Analysis ·
-                                Machine
-                                Learning · Research and Development (R&D) · Teamwork · Deep Learning · Time Series
-                                Analysis · Identifying New Opportunities · Scripting · Statistical Analysis · Diverse
-                                Groups Of People · Design of Experiments (DOE) · Project Management · Python
-                                (Programming Language) · Team Leadership
-                            </P>
-                            <hr>
-                            <h6 class="title text-danger">2019 - 2021</h6>
-                            <P>Research Associate <br> <b> National Center of Artificial Intelligence, University of
-                                    Engineering & Technology
-                                    Peshawar, Pakistan</b></P>
-                            <P class="subtitle">Performing data mining on satellite spectral image data through
-                                cloud-based computing is my primary job. My job included undertaking various tasks such
-                                as data
-                                collection, annotation, pipelining, pattern recognition, object detection, and
-                                segmentation, among others. These activities have diverse applications in fields such as
-                                environmental monitoring, land cover and land use classification, and geological
-                                exploration. <a
-                                    href="https://www.copernicus.eu/en/news/news/observer-copernicus-around-world-how-copernicus-relays-and-academy-members-leverage">Copernicus
-                                    Article</a> on my research</P>
-                            <hr>
-                            <h6 class="title text-danger">2018 - 2019</h6>
-                            <P>Project Engineer <br> <b>U.S-Pakistan Center for Advanced Studies in Energy, Peshawar,
-                                    Pakistan</b></P>
-                            <P class="subtitle">As a project engineer specializing in machine learning and data
-                                analysis,
-                                my primary responsibilities included:
-                                <br>
-                                <item>
-                                    • Developing and implementing machine learning techniques to monitor and forecast
-                                    the
-                                    health of aircraft hydraulic systems. This would involve analyzing data from various
-                                    sensors and sources to detect anomalies and predict system failures.
-                                </item>
-                                <br>
-                                <item>
-                                    • Conducting data analysis for wind farms to detect anomalies and optimize
-                                    performance.
-                                    This would involve working with large datasets, developing algorithms and models to
-                                    detect patterns and trends, and using statistical tools to identify potential issues
-                                    before they become critical.
-                            </P>
-                            </item>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-auto">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="mt-2">
-                                <h4>Education</h4>
-                                <span class="line"></span>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="title text-danger">2021 - Present</h6>
-                            <P>Ph.D. Computer Science <br> <b>Utah State University, Logan, Utah, U.S</b></P>
-                            <h8><em>CGPA: 3.9/4</em></h8>
-                            <P class="subtitle"><b>Courses:</b> Timeseries Analysis, Fairness AI, Probabilistic
-                                Modelling, Keystroke,
-                                Abstract Syntax Trees, Graph Neural Networks, Education Research</P>
-                            <P class="subtitle"><b>Publications:</b>
-                                1) <a href="https://doi.org/10.1109/BigData59044.2023.10386085">
-                                    Deciphering Student
-                                    Coding Behavior: Interpretable Keystroke Features and Ensemble Strategies for Grade
-                                    Prediction </a>
-                                2) <a href="https://arxiv.org/abs/2311.02640"> Assessing the
-                                    Promise and Pitfalls of ChatGPT for Automated Code Generation </a>
-                                3) <a href="https://ieeexplore.ieee.org/abstract/document/10069915"> A New Framework to
-                                    Assess the Individual Fairness of Probabilistic Classifiers </a>
-                                4) <a href="https://doi.org/10.1109/BigData59044.2023.10386839"> An Analysis of the
-                                    Dynamics of Ties on Twitter</a>
-                                5) <a href="https://arxiv.org/abs/2310.12281"> Enhancing the
-                                    Performance of Automated Grade Prediction in MOOC using Graph Representation
-                                    Learning </a>
-                            </P>
-                            <hr>
-                            <h6 class="title text-danger">2018 - 2020</h6>
-                            <P>Masters in Computer Engineering <br> <b>University of Engineering & Technology
-                                    Peshawar, Pakistan</b></P>
-                            <h8><em>CGPA: 4/4</em></h8>
-                            <P class="subtitle"> <b>Courses:</b> Remote Sensing, Pattern Recognition, Artificial
-                                Intelligence,
-                                Machine Learning Techniques, Evolutionary Computation, Optimization Techniques,
-                                Computational Bioinformatics </P>
-                            <hr>
-                            <h6 class="title text-danger">2014 - 2018</h6>
-
-                            <P>Bachelors in Computer Engineering <br> <b>University of Engineering & Technology
-                                    Peshawar, Pakistan</b>
-                            </P>
-                            <h8><em>CGPA: 3.1/4</em></h8>
-                            <P class="subtitle"><b>Courses:</b> Programming (OOP, Data Structures, System Programming),
-                                Digital Image
-                                Processing, Computer Organization & Architecture, Operating Systems, Circuits and
-                                Systems, Digital System Design, Microcontroller Based System Design, Wireless
-                                Communications, Database Management System etc</P>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="pull-left">
-                                <h4 class="mt-2">Skills</h4>
-                                <span class="line"></span>
-                            </div>
-                        </div>
-                        <div class="card-body pb-2">
-                            <h6>Programming (Python, C++, MATLAB)</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 97%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h6>Machine Learning</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 97%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h6>Deep Learning</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 95%"
-                                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h6>Graph Neural Networks</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 90%"
-                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h6>Natural Language Processing</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 85%"
-                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h6>Abstract Syntax Trees</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 80%"
-                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h6>Linux/UNIX</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 75%"
-                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h6>Git</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 75%"
-                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="pull-left">
-                                <h4 class="mt-2">Languages</h4>
-                                <span class="line"></span>
-                            </div>
-                        </div>
-                        <div class="card-body pb-2">
-                            <h6>English</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h6>Persian</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 80%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <h6>Urdu</h6>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%"
-                                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <section class="section bg-dark text-center">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-6 col-lg-3">
-                    <div class="row ">
-                        <div class="col-5 text-right text-light2 border-right py-3">
-                            <div class="m-auto"><i class="ti-alarm-clock icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">5+</h1>
-                            <p class="text-light2 mb-1">Years Worked</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-5 text-right text-light2 border-right py-3">
-                            <div class="m-auto"><i class="ti-layers-alt icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">7+</h1>
-                            <p class="text-light2 mb-1">Publications</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-5 text-right text-light2 border-right py-3">
-                            <div class="m-auto"><i class="ti-package icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">10+</h1>
-                            <p class="text-light2 mb-1">Projects Completed</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-5 text-right text-light2 border-right py-3">
-                            <div class="m-auto"><i class="ti-heart-broken icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">2k+</h1>
-                            <p class="text-light2 mb-1">Coffee Drinked</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="service">
-        <div class="container">
-            <h2 class="mb-5 pb-4"><span class="text-danger">My</span> Services</h2>
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-vector text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark">Machine Learning &amp; Deep Learning</h5>
-                            <P class="subtitle">As a Machine Learning and Deep Learning expert with 7 certifications and
-                                5 publications, I have a strong foundation in this field. My project experience includes
-                                a range of tasks such as anomaly detection in aircraft engines, image classification,
-                                object detection, object localization, image segmentation, and natural language
-                                processing. I have applied my skills to diverse data types including tabular, image,
-                                text, and video, and have developed efficient machine learning pipelines for various
-                                downstream applications. My expertise in this field is demonstrated by my successful
-                                projects and certifications.
-                            </P>
-                            </P>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-write text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark">Research &amp; Development</h5>
-                            <P class="subtitle">I have been conducting research in the field of Machine Learning and
-                                Deep Learning since 2017. My research journey began with a focus on identifying the
-                                social and technical factors that contribute to the failure of micro-hydro power plants.
-                                As a project engineer, I was subsequently hired to work on prognosis and health
-                                monitoring of jet aircrafts using sensor data mining techniques. My research experience
-                                also includes a position as a research associate at the national research lab NCAI,
-                                where I published 3 articles on remote sensing data for geological mapping. Currently,
-                                as a Ph.D. candidate, I am engaged in a project on grade prediction using Abstract
-                                Syntax Tree and Graph Neural Networks. </P>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-stats-up text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark">Leadership</h5>
-                            <P class="subtitle"> Throughout my career, I have had the opportunity to mentor and
-                                supervise junior researchers and interns. In addition to my research pursuits, I have
-                                also taken on leadership roles outside of academia. For example, I co-founded a film
-                                production company called <a href="https://www.youtube.com/@RethinkerMedia">Rethinker
-                                    Media</a>
-                                with my
-                                brother, and I created an online community of more than 10k <a
-                                    href="https://www.facebook.com/groups/317779189287620">Google Earth
-                                    Engine
-                                    practitioners and researchers </a>. I also founded and currently preside over the
-                                first <a href="https://my.usu.edu/groups/157/feed">Filmmaking Club at Utah
-                                    State
-                                    University</a>, and I have served as an executive member
-                                of the Chitral Engineering and Doctors Association to promote higher education among
-                                minorities in Pakistan. These experiences have helped me to develop my leadership skills
-                                and capabilities.
-                            </P>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Portfolio Section -->
-    <section class="section bg-custom-gray" id="portfolio">
-        <div class="container">
-            <h1 class="mb-5"><span class="text-danger">My</span> Projects</h1>
-            <div class="portfolio">
-                <div class="filters">
-                    <a href="#" data-filter=".new" class="active">
-                        All Projects
-                    </a>
-
-                    <a href="#" data-filter=".rs">
-                        Remote Sensing
-                    </a>
-                    <a href="#" data-filter=".cv">
-                        Computer Vision
-                    </a>
-                    <a href="#" data-filter=".text">
-                        Text Mining/NLP
-                    </a>
-                    <a href="#" data-filter=".speech">
-                        Speech/Audio
-                    </a>
-                </div>
-
-                <div class="portfolio-container">
-                    <div class="col-md-6 col-lg-4 new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/fairAI.jpg" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates"
-                                href="https://github.com/mfawadakbar/individual_fairness">
-                            <div class="content-holder"
-                                onclick="location.href='https://github.com/mfawadakbar/individual_fairness';">
-                                <div class="text-holder">
-                                    <h6 class="title">Fairness in AI
-                                    </h6>
-                                    <p class="subtitle">PCIndFair: A New Framework to Assess the
-                                        Individual Fairness of Probabilistic Classifiers</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 cv new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/a2c-architecture.png" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder"
-                                onclick="location.href='https://github.com/mfawadakbar/RL_Quadcopter';">
-                                <a class="img-popup" href="assets/imgs/web-2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Reinforcement Learning</h6>
-                                    <p class="subtitle">9-tail Actor-Critic (A2C) with 8 tails for actor and a tail for
-                                        critic to solve the tiltrotor problem</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 cv rs new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/limestone-remote-sensing.png" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder"
-                                onclick="location.href='https://www.mdpi.com/2076-3417/12/23/12147';">
-                                <a class="img-popup" href="assets/imgs/advertising-2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Machine Learning - Remote Sensing</h6>
-                                    <p class="subtitle">Cloud-based Limestone (industrial rock) mapping using machine
-                                        learning and computer vision techniques in Google Earth Engine</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 cv rs">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/fpca.png" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder"
-                                onclick="location.href='https://www.mdpi.com/2076-3417/11/23/11486';">
-                                <a class="img-popup" href="assets/imgs/advertising-2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">FPCA - Remote Sensing</h6>
-                                    <p class="subtitle">A Fusion of Feature-Oriented Principal Components (FPCA) of
-                                        Multispectral Data to Map Granite Exposures of Pakistan</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 cv rs">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/rs-ann.png" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder"
-                                onclick="location.href='https://www.mdpi.com/2076-3417/12/23/12147';">
-                                <a class="img-popup" href="assets/imgs/advertising-2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">SVM &amp; ANN - Remote Sensing</h6>
-                                    <p class="subtitle">Lithological Mapping of Kohat Basin in Pakistan Using
-                                        Multispectral Remote Sensing Data: A Comparison of Support Vector Machine (SVM)
-                                        and Artificial Neural Network (ANN)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 cv">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/computer-vision.png" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/web-4.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Computer Vision</h6>
-                                    <p class="subtitle">Face verification and face recognition using a pre-trained model
-                                        which represents ConvNet activations using a "channels first" convention.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-6 col-lg-4 text new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/machine-translation.png" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder"
-                                onclick="location.href='https://github.com/mfawadakbar/DeepLearningSpecialization_Coursera/blob/main/Sequence%20Models/Neural%20machine%20translation%20with%20attention%20-%20v2.ipynb';">
-                                <a class="img-popup" href="assets/imgs/advertising-3.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Sequential Modelling</h6>
-                                    <p class="subtitle">Neural Machine Translation (NMT) model to translate human
-                                        readable dates ("25th of June, 2009") into machine readable dates ("2009-06-25")
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 text new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/feasibility-analysis.jpg" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder"
-                                onclick="location.href='https://github.com/mfawadakbar/FeasibilityAnalysisData';">
-                                <a class="img-popup" href="assets/imgs/advertising-3.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Feasibility Anaysis of MHPs</h6>
-                                    <p class="subtitle">Feasibility analysis of Micro Hydro Plants (MHPs) in Pakistan
-                                        using machine learning
-                                        and data mining techniques
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 speech new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/speech-diarization-method.png" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder"
-                                onclick="location.href='https://colab.research.google.com/drive/1bTg6pPchAkjqe4-Y1X15cXfhYbe_nxGF?usp=sharing';">
-                                <a class="img-popup" href="assets/imgs/advertising-3.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Speech Diarization</h6>
-                                    <p class="subtitle">Speaker diarization (or diarization) is the process of
-                                        partitioning an audio stream containing human speech into homogeneous segments
-                                        according to the identity of each speaker. In this project, Speaker Diarization
-                                        module by using
-                                        the pre-trained model for
-                                        creating speaker embeddings.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 rs cv">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/UNET-artisanal-mining.png" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder"
-                                onclick="location.href='https://colab.research.google.com/drive/1YQTtPjqH_GiGh5envAUKIahAyw6tiqnq?usp=sharing';">
-                                <a class="img-popup" href="assets/imgs/advertising-3.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">UNET - Remote Sensing</h6>
-                                    <p class="subtitle">UNET-based approach which exploits multispectral Sentinel-2
-                                        open-source data and map artisanal and small-scale mines (ASM).
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of portfolio section -->
-
-
-
-
-
-    <section class="section" id="blog">
-        <div class="container">
-            <h2 class="mb-5">Latest <span class="text-danger">Publications</span></h2>
-            <div class="row">
-
-
-                <div class="cv">
-                    <div class="blog-card">
-                        <div class="img-holder">
-                            <img src="assets/imgs/deciphering_keystroke.gif"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        </div>
-
-                        <div class="content-holder">
-                            <h6 class="title">Deciphering Student Coding Behavior: Interpretable Keystroke Features and
-                                Ensemble Strategies for Grade Prediction
-                            </h6>
-                            <!--
-                        <p class="post-details">
-                            <a href="#">By: Admin</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 234</a>
-                            <a href="#"><i class="ti-comment"></i> 123</a>
-                        </p>
--->
-                            <p>Keystroke data in programming reveals intricate patterns that reflect the behavior of
-                                programmers.
-                                These patterns hold promise for predicting grades and other applications, providing
-                                insights into
-                                the skills of both proficient and less proficient programmers. Analyzing these patterns
-                                can yield
-                                tailored feedback for students who need support, enabling effective interventions. Our
-                                study utilizes
-                                a keystroke dataset from the CS1 (Introduction to Computer Science) course at Utah State
-                                University.
-                                We developed novel features by combining elements like key presses, timestamps, source
-                                locations, and
-                                programming terminology, drawing on prior research, our insights, and an analysis of
-                                programming behavior. An ensemble-based feature selection method identifies key
-                                features, which are then used in hyperparameter optimization and grade prediction with
-                                six classification and three regression algorithms. We categorized grades into three
-                                levels: Low, Average, and High. Despite challenges such as class imbalance, plagiarism,
-                                limited data per assignment, and the ceiling effect, we attained a notable weighted F1
-                                score of 78%. We also introduce an ensemble classification strategy, merging Isolation
-                                Forest outlier detection with a refined Random Forest classifier, achieving 80% accuracy
-                                on our test set. Additionally, we provide a detailed interpretation of our features,
-                                supported by results and a case study of our dataset. This research aims to enhance
-                                computer science education at the undergraduate level, focusing on improving its overall
-                                quality. Code and data are available
-                                https://github.com/DSAatUSU/Student-Coding-Behavior.git.</p>
-
-
-                            <a href="https://conferences.computer.org/icmlapub/pdfs/ICMLA2022-1oIbEyrqlxdYNqIVuUdynF/628300a876/628300a876.pdf"
-                                class="read-more">Read more <i class="ti-angle-double-right"></i></a>
-                        </div>
-                    </div><!-- end of blog wrapper -->
-                </div>
-
-
-                <div class="cv">
-                    <div class="blog-card">
-                        <div class="img-holder">
-                            <img src="assets/imgs/analysis_twitter.gif"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        </div>
-
-                        <div class="content-holder">
-                            <h6 class="title">An Analysis of the Dynamics of Ties on Twitter
-
-                            </h6>
-                            <!--
-                        <p class="post-details">
-                            <a href="#">By: Admin</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 234</a>
-                            <a href="#"><i class="ti-comment"></i> 123</a>
-                        </p>
--->
-                            <p>Online social networks are the breeding grounds for user connections, fostering
-                                information exchange, communication, content sharing, and community building. However,
-                                the dissolution of these digital relationships, often a less-explored facet, complements
-                                the studies of tie formation and maintenance. A comprehensive grasp of these
-                                connections, encompassing their inception, unraveling, and the potential foresight of
-                                disconnections, offers invaluable insights into network dynamics and the progression of
-                                interpersonal bonds. Yet, the investigation of broken ties faces a substantial
-                                challenge: the paucity of longitudinal and detailed data. To bridge this gap, this paper
-                                curates an expansive dataset, spanning over 120,000 Twitter users tracked across 15
-                                weeks with weekly snapshots. Armed with this dataset, we embark on an extensive
-                                exploration of Twitter links, delving into five distinct categories within the Twitter
-                                social graph. These categories encompass structural features like centrality,
-                                content-related aspects, including post polarity, user profile attributes like verified
-                                status, egocentric network elements such as reciprocity, and dense user representations
-                                typified by node2vec. Subsequently, we conduct a thorough analysis of these diverse
-                                features to unveil meaningful patterns.
-                            </p>
-
-
-                            <a href="https://doi.org/10.1109/BigData59044.2023.10386839" class="read-more">Read more <i
-                                    class="ti-angle-double-right"></i></a>
-                        </div>
-                    </div><!-- end of blog wrapper -->
-                </div>
-
-
-                <div class="cv">
-                    <div class="blog-card">
-                        <div class="img-holder">
-                            <img src="assets/imgs/fairAI.webp"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        </div>
-
-                        <div class="content-holder">
-                            <h6 class="title">A New Framework to Assess the Individual Fairness of Probabilistic
-                                Classifiers
-                            </h6>
-                            <!--
-                        <p class="post-details">
-                            <a href="#">By: Admin</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 234</a>
-                            <a href="#"><i class="ti-comment"></i> 123</a>
-                        </p>
--->
-                            <p>Fairness in machine learning has become a global concern due to the predominance of
-                                ML in
-                                automated decision-making systems. In comparison to group fairness, individual
-                                fairness,
-                                which aspires that similar individuals should be treated similarly, has received
-                                limited
-                                attention due to some challenges. One major challenge is the availability of a
-                                proper
-                                metric
-                                to evaluate individual fairness, especially for probabilistic classifiers. In this
-                                study, we
-                                propose a framework PCIndFair to assess the individual fairness of probabilistic
-                                classifiers. Unlike current individual fairness measures, our framework considers
-                                probability distribution rather than the final classification outcome, which is
-                                suitable
-                                for
-                                capturing the dynamic of probabilistic classifiers, e.g., neural networks. We
-                                perform
-                                extensive experiments on four standard datasets and discuss the practical benefits
-                                of
-                                the
-                                framework. This study can be helpful for machine learning researchers and
-                                practitioners
-                                flexibly assess their models' individual fairness.</p>
-
-
-                            <a href="https://conferences.computer.org/icmlapub/pdfs/ICMLA2022-1oIbEyrqlxdYNqIVuUdynF/628300a876/628300a876.pdf"
-                                class="read-more">Read more <i class="ti-angle-double-right"></i></a>
-                        </div>
-                    </div><!-- end of blog wrapper -->
-                </div>
-                <!-- blog-card -->
-                <div class="blog-card">
-                    <div class="img-holder">
-                        <img src="assets/imgs/limestone-remote-sensing.png"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                    </div>
-                    <div class="content-holder">
-                        <h6 class="title">Lithological Mapping of Kohat Basin in Pakistan Using Multispectral Remote
-                            Sensing Data: A Comparison of Support Vector Machine (SVM) and Artificial Neural Network
-                            (ANN)</h6>
-
-
-
-                        <p>Artificial intelligence (AI)-based multispectral remote sensing has been the best
-                            supporting
-                            tool using limited resources to enhance the lithological mapping abilities with
-                            accuracy,
-                            supported by ground truthing through traditional mapping techniques. The availability of
-                            the
-                            dataset, choice of algorithm, cost, accuracy, computational time, data labeling, and
-                            terrain
-                            features are some crucial considerations that researchers continue to explore. In this
-                            research, support vector machine (SVM) and artificial neural network (ANN) were applied
-                            to
-                            the Sentinel-2 MSI dataset for classifying lithologies having subtle compositional
-                            differences in the Kohat Basin's remote, inaccessible regions within Pakistan. First, we
-                            used principal component analysis (PCA), minimum noise fraction (MNF), and available
-                            maps
-                            for reliable data annotation for training SVM and (ANN) models for mapping ten classes
-                            (nine
-                            lithological units + water). The ANN and SVM results were compared with the previously
-                            conducted studies in the area and ground truth survey to evaluate their accuracy. SVM
-                            mapped
-                            ten classes with an overall accuracy (OA) of 95.78% and kappa coefficient of 0.95,
-                            compared
-                            to 95.73% and 0.95 by ANN classification. The SVM algorithm was more efficient
-                            concerning
-                            computational efficiency, accuracy, and ease due to available features within Google
-                            Earth
-                            Engine (GEE). Contrarily, ANN required time-consuming data transformation from GEE to
-                            Google
-                            Cloud before application in Google Colab.</p>
-
-                        <a href="https://doi.org/10.3390/app122312147" class="read-more">Read more <i
-                                class="ti-angle-double-right"></i></a>
-                    </div>
-                </div><!-- end of blog wrapper -->
-
-
-                <!-- blog-card -->
-                <div class="blog-card">
-                    <div class="img-holder">
-                        <img src="assets/imgs/fpca.png"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                    </div>
-                    <div class="content-holder">
-                        <h4 class="title">A Fusion of Feature-Oriented Principal Components of Multispectral Data to
-                            Map
-                            Granite Exposures of Pakistan</h4>
-
-
-
-                        <p>Despite low spatial resolutions, thermal infrared bands (TIRs) are generally more
-                            suitable
-                            for mineral mapping due to their high penetration in vegetated areas compared to
-                            shortwave
-                            infrared (SWIR) bands. The weak combinations of SWIR bands for minerals can be
-                            compensated
-                            by fusing SWIR-bearing data (Sentinel-2 and Landsat-8) with other multispectral data
-                            containing fundamental tones from TIR bands. In this paper, marble in a granitic complex
-                            in
-                            Mardan District (Khyber Pakhtunkhwa) in Pakistan is discriminated by fusing
-                            feature-oriented
-                            principal component selection (FPCS) obtained from the ASTER, Landsat-8 Operational Land
-                            Imager (OLI), Thermal Infrared Sensor (TIRS) and Sentinel-2 MSI data. Cloud computing
-                            from
-                            Google Earth Engine (GEE) was used to apply FPCS before and after the decorrelation
-                            stretching of Landsat-8, ASTER, and Sentinel-2 MSI data containing five (5) bands in the
-                            Landsat-8 OLI and TIRS and six (6) bands each in the ASTER and Sentinel-2 MSI datasets,
-                            resulting in 34 components (i.e., 2 × 17 components). A weighted linear combination of
-                            selected three components was used to map granite and marble. The samples collected
-                            during
-                            field visits and petrographic analysis confirmed the remote sensing results by revealing
-                            the
-                            region’s precise contact and extent of marble and granite rock types. The experimental
-                            results reflected the theoretical advantages of the proposed approach compared with the
-                            conventional stacking of band data for PCA-based fusion. The proposed methodology was
-                            also
-                            applied to delineate granite deposits in Karoonjhar Mountains, Nagarparker (Sindh
-                            province)
-                            and the Kotah Dome, Malakand (Khyber Pakhtunkhwa Province) in Pakistan. The paper
-                            presents a
-                            cost-effective methodology by the fusion of FPCS components for granite/marble mapping
-                            during mineral resource estimation. The importance of SWIR-bearing components in fusion
-                            represents minor minerals present in granite that could be used to model the engineering
-                            properties of the rock mass.</p>
-
-                        <a href="https://doi.org/10.3390/app112311486" class="read-more">Read more <i
-                                class="ti-angle-double-right"></i></a>
-                    </div>
-                </div><!-- end of last blog card -->
-
-            </div>
-        </div>
-
-    </section>
-
-    <div class="section contact" id="contact">
-        <div id="map" class="map"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="contact-form-card">
-                        <h4 class="contact-title">Send a message</h4>
-                        <form action="">
-                            <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Name *" required>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="email" placeholder="Email *" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id=" placeholder=" Message *" rows="7"
-                                    required></textarea>
-                            </div>
-                            <div class="form-group ">
-                                <button type="submit" class="form-control btn btn-primary">Send
-                                    Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="contact-info-card">
-                        <h4 class="contact-title">Get in touch</h4>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-mobile icon-md"></i>
-                            </div>
-                            <div class="col-10 ">
-                                <h6 class="d-inline">Phone : <br> <span class="text-muted">+1 (435)
-                                        554-xxxx</span></h6>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-map-alt icon-md"></i>
-                            </div>
-                            <div class="col-10">
-                                <h6 class="d-inline">Address :<br> <span class="text-muted">431 Old Main,
-                                        Utah State
-                                        University, Logan, Utah</span></h6>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-envelope icon-md"></i>
-                            </div>
-                            <div class="col-10">
-                                <h6 class="d-inline">Email :<br> <span class="text-muted">khan@usu.edu</span></h6>
-                            </div>
-                        </div>
-                        <ul class="social-icons pt-4">
-                            <li class="social-item"><a class="social-link text-dark"
-                                    href="https://www.facebook.com/profile.php?id=100009336210890"><i
-                                        class="ti-facebook" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark"
-                                    href="https://twitter.com/khanusuedu1"><i class="ti-twitter"
-                                        aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark"
-                                    href="https://www.linkedin.com/in/mfawadakbar/"><i class="ti-linkedin"
-                                        aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark"
-                                    href="https://www.instagram.com/khaneagle97/"><i class="ti-instagram"
-                                        aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark"
-                                    href="https://github.com/mfawadakbar"><i class="ti-github"
-                                        aria-hidden="true"></i></a></li>
+                    <div>
+                        <h3>Focus Areas</h3>
+                        <ul class="plain-list">
+                            <li>Learning analytics and keystroke-based modeling of programming behavior.</li>
+                            <li>Responsible and fair AI systems that surface actionable insights.</li>
+                            <li>Data storytelling for STEM education and community partners.</li>
                         </ul>
                     </div>
+                    <div>
+                        <h3>Previously</h3>
+                        <p>Research Associate at Pakistan's National Center of Artificial Intelligence and Project
+                            Engineer at USPCAS-E, delivering remote sensing and predictive maintenance solutions for
+                            industry and government stakeholders.</p>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-        </div>
+            <section id="research" class="panel">
+                <span class="badge">Research</span>
+                <h2>Human-centered AI that supports real learning progress</h2>
+                <div class="focus-grid">
+                    <article class="focus-card">
+                        <h3>Learning Analytics &amp; Instrumentation</h3>
+                        <p>Designing multimodal data capture—keystrokes, IDE telemetry, and formative assessments—to map
+                            learning trajectories and deliver timely support in computer science courses.</p>
+                        <ul class="tag-list">
+                            <li>Keystroke modeling</li>
+                            <li>Adaptive feedback loops</li>
+                            <li>CS1 analytics</li>
+                        </ul>
+                    </article>
+                    <article class="focus-card">
+                        <h3>Responsible &amp; Fair AI</h3>
+                        <p>Building evaluation frameworks that elevate individual-level fairness considerations and align
+                            predictive models with institutional goals and student well-being.</p>
+                        <ul class="tag-list">
+                            <li>PCIndFair framework</li>
+                            <li>Model interpretability</li>
+                            <li>Ethical deployment</li>
+                        </ul>
+                    </article>
+                    <article class="focus-card">
+                        <h3>Applied ML for Earth &amp; Energy Systems</h3>
+                        <p>Combining remote sensing, classical ML, and deep learning to monitor natural resources, map
+                            industrial activity, and improve renewable energy operations.</p>
+                        <ul class="tag-list">
+                            <li>Google Earth Engine</li>
+                            <li>Segmentation &amp; detection</li>
+                            <li>Operational analytics</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="projects" class="panel">
+                <span class="badge">Projects</span>
+                <h2>Tools and studies shaping equitable learning experiences</h2>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="assets/imgs/codeclimberai-architecture.jpg"
+                                alt="Architecture diagram for the CodeClimberAI platform">
+                        </div>
+                        <div class="project-body">
+                            <h3>CodeClimberAI Exercise Generator</h3>
+                            <p>Full-stack intelligent tutoring system delivering 11,700 curated Python exercises across
+                                five modalities with keystroke analytics, OAuth authentication, and a MySQL-backed
+                                progress history.</p>
+                            <div class="tag-list">
+                                <span class="chip">Flask</span>
+                                <span class="chip">Vue</span>
+                                <span class="chip">MySQL</span>
+                                <span class="chip">Learning Analytics</span>
+                            </div>
+                            <a class="project-link" href="https://github.com/mfawadakbar/CodeClimberAI" target="_blank"
+                                rel="noopener">Explore the project <i class="ti-arrow-top-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="assets/imgs/fairAI.jpg"
+                                alt="Visualization of the PCIndFair framework for fairness in AI">
+                        </div>
+                        <div class="project-body">
+                            <h3>PCIndFair: Individual Fairness in AI</h3>
+                            <p>A novel framework that diagnoses and mitigates individual fairness violations in
+                                probabilistic classifiers, offering interpretable dashboards for decision makers.</p>
+                            <div class="tag-list">
+                                <span class="chip">Responsible AI</span>
+                                <span class="chip">Python</span>
+                                <span class="chip">Fairness Metrics</span>
+                            </div>
+                            <a class="project-link" href="https://github.com/mfawadakbar/individual_fairness"
+                                target="_blank" rel="noopener">See the framework <i class="ti-arrow-top-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="assets/imgs/deciphering_keystroke.gif"
+                                alt="Animation illustrating keystroke analytics for programming behavior">
+                        </div>
+                        <div class="project-body">
+                            <h3>Deciphering Student Coding Behavior</h3>
+                            <p>Interpretable keystroke features and ensemble strategies that achieve 80% accuracy in
+                                predicting CS1 student performance while providing actionable feedback for instructors.</p>
+                            <div class="tag-list">
+                                <span class="chip">Ensemble Learning</span>
+                                <span class="chip">Education Data Mining</span>
+                                <span class="chip">Python</span>
+                            </div>
+                            <a class="project-link"
+                                href="https://github.com/DSAatUSU/Student-Coding-Behavior.git" target="_blank"
+                                rel="noopener">View code &amp; data <i class="ti-arrow-top-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="assets/imgs/limestone-remote-sensing.png"
+                                alt="Remote sensing visualization showing limestone mapping results">
+                        </div>
+                        <div class="project-body">
+                            <h3>Cloud-based Limestone Mapping</h3>
+                            <p>Machine learning workflows in Google Earth Engine that fuse multispectral imagery and
+                                feature-oriented PCA to map industrial rock deposits for sustainable mining.</p>
+                            <div class="tag-list">
+                                <span class="chip">Remote Sensing</span>
+                                <span class="chip">Google Earth Engine</span>
+                                <span class="chip">FPCA</span>
+                            </div>
+                            <a class="project-link" href="https://www.mdpi.com/2076-3417/12/23/12147" target="_blank"
+                                rel="noopener">Read the study <i class="ti-arrow-top-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="publications" class="panel">
+                <span class="badge">Publications</span>
+                <h2>Selected work and collaborations</h2>
+                <p>A reverse chronological snapshot of my scholarship. For the full record, download my CV or visit my
+                    Google Scholar profile.</p>
+                <div class="publication-tabs" role="tablist" aria-label="Publication categories">
+                    <button class="pub-tab active" type="button" role="tab" id="tab-latest" data-target="latest"
+                        aria-selected="true" aria-controls="pub-latest">Latest</button>
+                    <button class="pub-tab" type="button" role="tab" id="tab-education" data-target="education"
+                        aria-selected="false" aria-controls="pub-education" tabindex="-1">AI in Education</button>
+                    <button class="pub-tab" type="button" role="tab" id="tab-fairness" data-target="fairness"
+                        aria-selected="false" aria-controls="pub-fairness" tabindex="-1">AI in Fairness</button>
+                    <button class="pub-tab" type="button" role="tab" id="tab-remote" data-target="remote"
+                        aria-selected="false" aria-controls="pub-remote" tabindex="-1">Remote Sensing</button>
+                    <button class="pub-tab" type="button" role="tab" id="tab-other" data-target="other"
+                        aria-selected="false" aria-controls="pub-other" tabindex="-1">Other</button>
+                </div>
+                <div class="publication-slider" data-active="latest">
+                    <div class="publication-track">
+                        <section class="publication-group" id="pub-latest" data-tab="latest" role="tabpanel"
+                            aria-labelledby="tab-latest" aria-hidden="false">
+                            <h3>Latest</h3>
+                            <ol class="publication-list">
+                                <li>
+                                    <h3>Human Evaluation of GPT for Scalable Python Programming Exercise Generation</h3>
+                                    <p class="publication-meta">M.F.A. Khan, M. Ramsdell, H. Nguyen, H. Karimi &middot; IEEE
+                                        International Conference on Data Science and Advanced Analytics (DSAA) 2024 &middot;
+                                        Oct 2024 &middot; pp. 1&ndash;10
+                                        <a href="https://ieeexplore.ieee.org/abstract/document/10722841" target="_blank"
+                                            rel="noopener">Paper</a>
+                                    </p>
+                                    <p>Benchmarks GPT-4 Turbo for curriculum-aligned Python exercise generation, producing
+                                        11,700 CS1 problems and studying student and instructor feedback on quality and effort
+                                        to scale intelligent tutoring systems.</p>
+                                </li>
+                                <li>
+                                    <h3>Assessing the Promise and Pitfalls of ChatGPT for Automated Code Generation</h3>
+                                    <p class="publication-meta">M.F.A. Khan, M. Ramsdell, E. Falor, H. Karimi &middot; 17th
+                                        International Conference on Educational Data Mining (EDM) 2024 &middot; Jul 2024 &middot;
+                                        pp. 83&ndash;95
+                                        <a href="https://github.com/DSAatUSU/ChatGPT-promises-and-pitfalls" target="_blank"
+                                            rel="noopener">Code &amp; data</a>
+                                    </p>
+                                    <p>Contrasts ChatGPT and human developers across 131 programming prompts using 14 code
+                                        quality metrics, highlighting strengths in data analysis tasks and revealing gaps in
+                                        visual reasoning scenarios.</p>
+                                </li>
+                                <li>
+                                    <h3>Student-perceived Cognitive Load of LLM-generated Programming Exercises</h3>
+                                    <p class="publication-meta">M.F.A. Khan, L.E. Feri, H. Nguyen, H. Karimi &middot;
+                                        Accepted for the 12th IEEE International Conference on Data Science and Advanced
+                                        Analytics (DSAA) 2025</p>
+                                    <p>Measures how CS1 students experience GPT-generated exercises using keystroke telemetry,
+                                        code metrics, and survey data, providing actionable guidance for balancing difficulty
+                                        and scaffolded AI feedback.</p>
+                                    <p class="publication-meta"><a href="https://github.com/DSAatUSU/LLMCognitiveLoadProgramming"
+                                            target="_blank" rel="noopener">Repository</a></p>
+                                </li>
+                            </ol>
+                        </section>
+
+                        <section class="publication-group" id="pub-education" data-tab="education" role="tabpanel"
+                            aria-labelledby="tab-education" aria-hidden="true">
+                            <h3>AI in Education</h3>
+                            <ol class="publication-list">
+                                <li>
+                                    <h3>Human Evaluation of GPT for Scalable Python Programming Exercise Generation</h3>
+                                    <p class="publication-meta">M.F.A. Khan, M. Ramsdell, H. Nguyen, H. Karimi &middot; IEEE
+                                        DSAA 2024 &middot; Oct 2024
+                                        <a href="https://ieeexplore.ieee.org/abstract/document/10722841" target="_blank"
+                                            rel="noopener">Paper</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>Assessing the Promise and Pitfalls of ChatGPT for Automated Code Generation</h3>
+                                    <p class="publication-meta">M.F.A. Khan, M. Ramsdell, E. Falor, H. Karimi &middot; EDM 2024
+                                        &middot; Jul 2024
+                                        <a href="https://educationaldatamining.org/edm2024/proceedings/2024.EDM-long-papers.7/index.html"
+                                            target="_blank" rel="noopener">Paper</a>
+                                        <a href="https://github.com/DSAatUSU/ChatGPT-promises-and-pitfalls" target="_blank"
+                                            rel="noopener">Code &amp; data</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>Student-perceived Cognitive Load of LLM-generated Programming Exercises</h3>
+                                    <p class="publication-meta">M.F.A. Khan, L.E. Feri, H. Nguyen, H. Karimi &middot; DSAA 2025</p>
+                                </li>
+                                <li>
+                                    <h3>Deciphering Student Coding Behavior: Interpretable Keystroke Features and Ensemble
+                                        Strategies for Grade Prediction</h3>
+                                    <p class="publication-meta">M.F.A. Khan, J. Edwards, P. Bodily, H. Karimi &middot; IEEE
+                                        International Conference on Machine Learning and Applications (ICMLA) 2022
+                                        <a href="https://conferences.computer.org/icmlapub/pdfs/ICMLA2022-1oIbEyrqlxdYNqIVuUdynF/628300a876/628300a876.pdf"
+                                            target="_blank" rel="noopener">Paper</a>
+                                        <a href="https://github.com/DSAatUSU/Student-Coding-Behavior.git" target="_blank"
+                                            rel="noopener">Code</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>Enhancing the Performance of Automated Grade Prediction in MOOC Using Graph Representation
+                                        Learning</h3>
+                                    <p class="publication-meta">S. Farokhi, A. Yaramal, J. Huang, M.F.A. Khan, X. Qi, H. Karimi
+                                        &middot; IEEE International Conference on Big Data (BigData) 2023
+                                        <a href="https://ieeexplore.ieee.org/abstract/document/10302642" target="_blank"
+                                            rel="noopener">Paper</a>
+                                    </p>
+                                </li>
+                            </ol>
+                        </section>
+
+                        <section class="publication-group" id="pub-fairness" data-tab="fairness" role="tabpanel"
+                            aria-labelledby="tab-fairness" aria-hidden="true">
+                            <h3>AI in Fairness</h3>
+                            <ol class="publication-list">
+                                <li>
+                                    <h3>A New Framework to Assess the Individual Fairness of Probabilistic Classifiers</h3>
+                                    <p class="publication-meta">M.F.A. Khan, H. Karimi &middot; IEEE International Conference
+                                        on Machine Learning and Applications (ICMLA) 2022
+                                        <a href="https://ieeexplore.ieee.org/document/10069915" target="_blank"
+                                            rel="noopener">Paper</a>
+                                        <a href="https://github.com/mfawadakbar/individual_fairness" target="_blank"
+                                            rel="noopener">Project</a>
+                                    </p>
+                                    <p>Introduces PCIndFair, a diagnostic toolkit that spotlights individuals at risk of unfair
+                                        outcomes and guides mitigation strategies.</p>
+                                </li>
+                                <li>
+                                    <h3>Enhancing Individual Fairness Through Propensity Score Matching</h3>
+                                    <p class="publication-meta">H. Karimi, M.F.A. Khan, H. Liu, T. Derr, H. Liu &middot; IEEE
+                                        International Conference on Data Science and Advanced Analytics (DSAA) 2022
+                                        <a href="https://ieeexplore.ieee.org/abstract/document/10032333" target="_blank"
+                                            rel="noopener">Paper</a>
+                                    </p>
+                                    <p>Aligns causal inference techniques with machine learning pipelines to reduce individual
+                                        unfairness in predictive systems.</p>
+                                </li>
+                            </ol>
+                        </section>
+
+                        <section class="publication-group" id="pub-remote" data-tab="remote" role="tabpanel"
+                            aria-labelledby="tab-remote" aria-hidden="true">
+                            <h3>Remote Sensing</h3>
+                            <ol class="publication-list">
+                                <li>
+                                    <h3>Lithological Mapping of Kohat Basin in Pakistan Using Multispectral Remote Sensing Data</h3>
+                                    <p class="publication-meta">F. Elahi, K. Muhammad, S.D. Din, M.F.A. Khan, S. Bashir, M.
+                                        Hanif &middot; <em>Applied Sciences</em> 12(23), 12147 (2022)
+                                        <a href="https://www.mdpi.com/2076-3417/12/23/12147" target="_blank"
+                                            rel="noopener">Article</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>A Fusion of Feature-oriented Principal Components of Multispectral Data to Map Granite</h3>
+                                    <p class="publication-meta">S.U. Din, K. Muhammad, M.F.A. Khan, S. Bashir, M. Sajid, A.
+                                        Khan &middot; <em>Applied Sciences</em> 11(23), 11486 (2021)
+                                        <a href="https://www.mdpi.com/2076-3417/11/23/11486" target="_blank"
+                                            rel="noopener">Article</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>Mapping Alochemical Limestone Formations in Hazara, Pakistan Using Google Cloud Architecture</h3>
+                                    <p class="publication-meta">M.F.A. Khan, K. Muhammad, S. Bashir, S. Uddin, M. Hanif &middot;
+                                        <em>ISPRS International Journal of Geo-Information</em> 10(2), 58 (2021)
+                                        <a href="https://www.mdpi.com/2220-9964/10/2/58" target="_blank"
+                                            rel="noopener">Article</a>
+                                    </p>
+                                </li>
+                            </ol>
+                        </section>
+
+                        <section class="publication-group" id="pub-other" data-tab="other" role="tabpanel"
+                            aria-labelledby="tab-other" aria-hidden="true">
+                            <h3>Other</h3>
+                            <ol class="publication-list">
+                                <li>
+                                    <h3>An Analysis of the Dynamics of Ties on Twitter</h3>
+                                    <p class="publication-meta">K. Kheiri, M.F.A. Khan, T. Derr, H. Karimi &middot; IEEE
+                                        International Conference on Big Data (BigData) 2023
+                                        <a href="https://ieeexplore.ieee.org/abstract/document/10386839" target="_blank"
+                                            rel="noopener">Paper</a>
+                                    </p>
+                                    <p>Longitudinal study of 120K Twitter users exploring how structural, content, and behavioral
+                                        signals forecast tie dissolution at scale.</p>
+                                </li>
+                            </ol>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <section id="teaching" class="panel">
+                <span class="badge">Teaching &amp; Service</span>
+                <h2>Building supportive learning experiences</h2>
+                <div class="split">
+                    <article class="teaching-card">
+                        <h3>Utah State University · Graduate TA</h3>
+                        <p>2021 — Present</p>
+                        <ul class="plain-list">
+                            <li>Facilitated labs and recitations for introductory programming and analytics courses,
+                                supporting 100+ students each semester.</li>
+                            <li>Designed interactive modules and data-driven feedback loops inside Canvas and custom
+                                learning tools.</li>
+                            <li>Coordinated grading, mentoring, and onboarding for undergraduate research assistants.</li>
+                        </ul>
+                    </article>
+                    <article class="teaching-card">
+                        <h3>Mentorship &amp; Outreach</h3>
+                        <ul class="plain-list">
+                            <li>Mentor undergraduate researchers on keystroke analytics, fairness in AI, and data
+                                storytelling projects.</li>
+                            <li>Organize workshops on ethical AI practices and data literacy for local educators and
+                                community partners.</li>
+                            <li>Volunteer judge and coach for regional hackathons and STEM education events.</li>
+                        </ul>
+                    </article>
+                    <article class="teaching-card">
+                        <h3>Industry &amp; Research Leadership</h3>
+                        <ul class="plain-list">
+                            <li>Led ML projects at Pakistan's National Center of AI focused on geospatial intelligence and
+                                industrial analytics.</li>
+                            <li>Developed predictive maintenance pipelines for aircraft hydraulics and wind energy assets
+                                at USPCAS-E.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="life" class="panel">
+                <span class="badge">My Life</span>
+                <h2>Moments beyond research</h2>
+                <p>A peek at the places, people, and events that keep me inspired outside the lab. I rotate photos often—drop
+                    new memories in the gallery to keep up with the journey.</p>
+                <div class="life-slider" data-life-slider>
+                    <button class="life-control life-control--prev" type="button" aria-label="Previous photo"
+                        data-life-prev>
+                        <i class="ti-angle-left"></i>
+                    </button>
+                    <div class="life-viewport">
+                        <div class="life-track">
+                            <!-- Add or reorder photos by inserting more .life-slide blocks. Store new images under assets/imgs/life/ -->
+                            <figure class="life-slide">
+                                <img src="assets/imgs/header.jpg" alt="Fawad standing on campus at Utah State University">
+                                <figcaption>Sunrise on Utah State’s Old Main Hill before an early research session.</figcaption>
+                            </figure>
+                            <figure class="life-slide">
+                                <img src="assets/imgs/avatar.jpg" alt="Portrait of Fawad Khan">
+                                <figcaption>Every new collaboration starts with a smile.</figcaption>
+                            </figure>
+                            <figure class="life-slide">
+                                <img src="assets/imgs/fairAI.jpg"
+                                    alt="Presenting fairness research during an AI conference session">
+                                <figcaption>Sharing our fairness framework with peers at a recent AI symposium.</figcaption>
+                            </figure>
+                            <figure class="life-slide">
+                                <img src="assets/imgs/limestone-remote-sensing.png"
+                                    alt="Remote sensing fieldwork for limestone mapping">
+                                <figcaption>Field notes from remote sensing campaigns tracking sustainable mining.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <button class="life-control life-control--next" type="button" aria-label="Next photo"
+                        data-life-next>
+                        <i class="ti-angle-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <section id="contact" class="panel">
+                <span class="badge">Contact</span>
+                <h2>Let’s collaborate</h2>
+                <p class="cta">I’m always open to new research collaborations, invited talks, and partnerships that align
+                    AI innovation with meaningful learning outcomes.</p>
+                <div class="contact-grid">
+                    <article class="contact-card">
+                        <h3>Email</h3>
+                        <a href="mailto:khan@usu.edu">khan@usu.edu</a>
+                    </article>
+                    <article class="contact-card">
+                        <h3>Phone</h3>
+                        <a href="tel:+14355549385">+1 (435) 554-9385</a>
+                    </article>
+                    <article class="contact-card">
+                        <h3>Office</h3>
+                        <p>431 Old Main<br>Utah State University<br>Logan, Utah 84322</p>
+                    </article>
+                </div>
+                <a class="button" href="mailto:khan@usu.edu">Start a conversation</a>
+            </section>
+        </main>
     </div>
-    <footer class="footer py-3">
-        <div class="container">
-            <p class="small mb-0 text-light" align="center">
-                &copy;
-                <script>document.write(new Date().getFullYear())</script> Created With <i
-                    class="ti-heart text-danger"></i> By <a href="http://devcrud.com" target="_blank"><span
-                        class="text-danger" title="Bootstrap 4 Themes and Dashboards">Fawad Khan</span></a>
-            </p>
-        </div>
+
+    <footer class="page-footer">
+        <p>&copy; <span id="year"></span> Fawad Khan. Built with curiosity and care.</p>
     </footer>
 
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap 3 affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- Isotope  -->
-    <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
-
-    <!-- Google mpas -->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
-
-    <!-- JohnDoe js -->
     <script src="assets/js/johndoe.js"></script>
-
 </body>
 
 </html>
