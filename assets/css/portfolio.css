@@ -25,7 +25,7 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background: linear-gradient(90deg, var(--sidebar-bg) 0 320px, var(--bg) 320px 100%);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -99,18 +99,7 @@ a:focus {
   background: rgba(255, 255, 255, 0.12);
 }
 
-.sidebar__profile {
-  text-align: left;
-}
-
-.sidebar__profile img {
-  width: 108px;
-  height: 108px;
-  border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.6);
-  margin-bottom: 1rem;
-  object-fit: cover;
-}
+*** End Patch***
 
 .sidebar__profile h1 {
   font-family: 'Playfair Display', serif;
@@ -161,7 +150,9 @@ a:focus {
   color: rgba(245, 248, 251, 0.75);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
+  text-align: center;
 }
 
 .sidebar__note i {
@@ -172,6 +163,7 @@ a:focus {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  align-items: center;
 }
 
 .sidebar__cta {
@@ -184,6 +176,8 @@ a:focus {
   color: var(--sidebar-text);
   font-weight: 500;
   transition: background 0.2s ease, transform 0.2s ease;
+  width: 100%;
+  justify-content: center;
 }
 
 .sidebar__cta:hover,
@@ -198,6 +192,8 @@ a:focus {
   padding: 0;
   margin: 0;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -544,6 +540,7 @@ p {
 .button:focus {
   background: #0a7f86;
   text-decoration: none;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -841,6 +838,10 @@ p {
 }
 
 @media (max-width: 992px) {
+  body {
+    background: var(--bg);
+  }
+
   .page {
     grid-template-columns: 1fr;
   }
@@ -925,4 +926,17 @@ p {
   .sidebar__social {
     justify-content: center;
   }
+}
+.sidebar__profile {
+  text-align: center;
+}
+
+.sidebar__profile img {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  margin: 0 auto 1rem;
+  object-fit: cover;
+  display: block;
 }
