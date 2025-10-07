@@ -574,36 +574,44 @@ p {
 
 .life-slide {
   min-width: 100%;
+  position: relative;
   margin: 0;
   color: var(--text);
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(16, 47, 63, 0.08);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1rem 0;
-  box-sizing: border-box;
+  box-shadow: 0 18px 36px rgba(15, 45, 63, 0.12);
+  transition: box-shadow 0.35s ease;
+  padding: 1.2rem;
 }
 
 .life-slide img {
-  max-width: 100%;
-  width: auto;
-  max-height: 420px;
+  width: 100%;
   height: auto;
+  max-height: 420px;
   object-fit: contain;
-  background: rgba(16, 47, 63, 0.06);
-  border-radius: 18px;
   display: block;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: zoom-in;
 }
 
 .life-slide figcaption {
   margin: 0;
-  width: 100%;
-  padding: 1.4rem 1.8rem;
-  background: linear-gradient(180deg, rgba(16, 47, 63, 0.85) 0%, rgba(16, 47, 63, 0.72) 100%);
-  color: var(--sidebar-text);
-  font-size: 1.02rem;
-  line-height: 1.6;
-  border-radius: 16px;
+  position: absolute;
+  left: 1.8rem;
+  right: 1.8rem;
+  bottom: 1.8rem;
+  padding: 1.1rem 1.3rem;
+  background: rgba(9, 25, 38, 0.78);
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.55;
+  border-radius: 14px;
+  z-index: 2;
+  box-shadow: 0 16px 30px rgba(9, 25, 38, 0.45);
 }
 
 .life-control {
@@ -641,6 +649,122 @@ p {
   opacity: 0.4;
   cursor: default;
   pointer-events: none;
+}
+
+.life-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 25, 38, 0.12);
+  transition: background 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.life-slide:hover,
+.life-slide:focus-within {
+  box-shadow: 0 26px 60px rgba(9, 25, 38, 0.38);
+}
+
+.life-slide:hover img,
+.life-slide:focus-within img {
+  transform: scale(1.12);
+}
+
+.life-slide:hover::after,
+.life-slide:focus-within::after {
+  background: rgba(9, 25, 38, 0.48);
+}
+
+.life-slide:hover figcaption,
+.life-slide:focus-within figcaption {
+  background: rgba(9, 25, 38, 0.88);
+}
+
+.life-slide:hover img,
+.life-slide:focus-within img {
+  transform: scale(1.06);
+}
+
+.life-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 31, 45, 0.76);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+.life-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.life-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.life-lightbox__card {
+  position: relative;
+  max-width: min(96vw, 1100px);
+  max-height: min(94vh, 860px);
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1;
+  }
+
+.life-lightbox__card img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 30px 100px rgba(3, 12, 20, 0.55);
+}
+
+.life-lightbox__card figcaption {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #ffffff;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.life-lightbox__close {
+  position: absolute;
+  top: -1.2rem;
+  right: -1.2rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: #0f1f2d;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.life-lightbox__close:hover,
+.life-lightbox__close:focus {
+  background: var(--accent-strong);
+  color: #ffffff;
+  outline: none;
 }
 
 .page-footer {
@@ -695,12 +819,24 @@ p {
   }
 
   .life-slide img {
-    max-height: 300px;
+    max-height: none;
   }
 
   .life-slide figcaption {
-    font-size: 0.98rem;
-    padding: 1.2rem 1.4rem;
+  font-size: 0.95rem;
+  left: 1.4rem;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  padding: 1rem 1.2rem;
+  }
+
+  .life-lightbox {
+    padding: 1.3rem;
+  }
+
+  .life-lightbox__card {
+    padding: 0;
+    gap: 0.8rem;
   }
 }
 

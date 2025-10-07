@@ -180,6 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const lifeSlides = lifeTrack ? Array.from(lifeTrack.children) : [];
     const prevButton = lifeSlider.querySelector('[data-life-prev]');
     const nextButton = lifeSlider.querySelector('[data-life-next]');
+    const lightbox = document.querySelector('[data-life-lightbox]');
+    const lightboxImage = lightbox ? lightbox.querySelector('[data-life-lightbox-image]') : null;
+    const lightboxCaption = lightbox ? lightbox.querySelector('[data-life-lightbox-caption]') : null;
+    const lightboxCloseElements = lightbox ? Array.from(lightbox.querySelectorAll('[data-life-close]')) : [];
     let lifeIndex = 0;
 
     const updateLifeSlider = () => {
@@ -210,6 +214,95 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lifeSlider && lifeSlides.length > 1) {
       lifeSlider.setAttribute('data-enhanced', 'true');
     }
+
+    const openLightbox = (slide) => {
+      if (!lightbox || !lightboxImage || !lightboxCaption) {
+        return;
+      }
+
+      const image = slide.querySelector('img');
+      const caption = slide.querySelector('figcaption');
+      if (!image) {
+        return;
+      }
+
+      lightboxImage.src = image.getAttribute('src') || '';
+      lightboxImage.alt = image.getAttribute('alt') || '';
+      lightboxCaption.textContent = caption ? caption.textContent : '';
+
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const closeButton = lightbox.querySelector('.life-lightbox__close');
+      if (closeButton) {
+        closeButton.focus();
+      }
+    };
+
+    const closeLightbox = () => {
+      if (!lightbox) {
+        return;
+      }
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    lifeSlides.forEach((slide, index) => {
+      const image = slide.querySelector('img');
+      if (!image) {
+        return;
+      }
+      image.addEventListener('click', () => {
+        openLightbox(slide);
+      });
+
+      image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openLightbox(slide);
+        }
+      });
+      image.setAttribute('tabindex', '0');
+    });
+
+    lightboxCloseElements.forEach((element) => {
+      element.addEventListener('click', () => {
+        closeLightbox();
+      });
+    });
+
+    if (lightbox) {
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (!lightbox || !lightbox.classList.contains('is-open')) {
+        return;
+      }
+
+      if (event.key === 'Escape') {
+        closeLightbox();
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goToLifeSlide(Math.max(0, lifeIndex - 1));
+        const targetSlide = lifeSlides[lifeIndex];
+        if (targetSlide) {
+          openLightbox(targetSlide);
+        }
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goToLifeSlide(Math.min(lifeSlides.length - 1, lifeIndex + 1));
+        const targetSlide = lifeSlides[lifeIndex];
+        if (targetSlide) {
+          openLightbox(targetSlide);
+        }
+      }
+    });
 
     if (prevButton) {
       prevButton.addEventListener('click', () => {
